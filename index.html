@@ -7,121 +7,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-    <style>
+    <link rel="stylesheet" href="main.css">
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
 
-        h2 {
-            text-align: center;
-            margin-top: 30px;
-            color: #333;
-        }
-
-        .carousel-container {
-            width: 80%;
-            max-width: 600px;
-            overflow: hidden;
-            margin: 30px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            background: #fff;
-        }
-
-        .carousel-slides {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .slide {
-            width: 100%;
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .slide img {
-            width: 100%;
-            display: block;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .slide .caption {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .controls {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .controls button {
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            background-color: #5595da;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .controls button:hover {
-            background-color: #0056b3;
-        }
-
-        form {
-            max-width: 400px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 25px 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        button[type="submit"] {
-            margin-top: 20px;
-            width: 100%;
-            padding: 12px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #218838;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -130,15 +18,15 @@
     <div class="carousel-container">
         <div class="carousel-slides">
             <div class="slide">
-                <img src="./img1.jpg" alt="Slide 1">
+                <img src="img/img1.jpg" alt="Slide 1">
                 <div class="caption">Bem-vindo ao Slide 1</div>
             </div>
             <div class="slide">
-                <img src="./img2.png" alt="Slide 2">
+                <img src="img/img2.png" alt="Slide 2">
                 <div class="caption">Confira o Slide 2</div>
             </div>
             <div class="slide">
-                <img src="./img3.jpg" alt="Slide 3">
+                <img src="img/img3.jpg" alt="Slide 3">
                 <div class="caption">Este é o Slide 3</div>
             </div>
         </div>
@@ -167,48 +55,7 @@
         </label>
         <button type="submit">Enviar</button>
     </form>
-
-    <script>
-
-        let currentSlide = 0;
-        const totalSlides = $('.slide').length;
-
-        function updateCarousel() {
-            $('.carousel-slides').css('transform', `translateX(-${currentSlide * 100}%)`);
-        }
-
-        $('#next').click(function () {
-            if (currentSlide < totalSlides - 1) {
-                currentSlide++;
-                updateCarousel();
-            }
-        });
-
-        $('#prev').click(function () {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateCarousel();
-            }
-        });
-
-    // Máscaras
-    $('#telefone').mask('(00) 00000-0000');
-    $('#cpf').mask('000.000.000-00');
-
-    // Validação simples
-    $('#meuFormulario').submit(function (e) {
-        const nome = $('#nome').val().trim();
-        const email = $('#email').val().trim();
-
-        if (nome === '' || email === '') {
-            alert('Por favor, preencha todos os campos obrigatórios.');
-            e.preventDefault();
-        } else {
-            alert('Formulário enviado com sucesso!');
-        }
-        });
-
-    </script>
     
+    <script src="./script.js"></script>
 </body>
 </html>
